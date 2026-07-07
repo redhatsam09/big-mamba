@@ -56,7 +56,7 @@ install_mamba() {
         PIP="$PYTHON -m pip"
     fi
 
-    $PIP install big-mamba-lang
+    $PIP install big-mamba
 
     echo ""
     echo "  Big Mamba installed successfully."

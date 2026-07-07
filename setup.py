@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="big-mamba-lang",
+    name="big-mamba",
     version="1.0.0",
     author="Big Mamba Team",
     description="Big Mamba - The shorthand programming language. Python, but faster to type.",

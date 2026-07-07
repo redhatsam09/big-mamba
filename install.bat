@@ -22,12 +22,12 @@ echo   Found Python %PYVER%
 
 echo   Installing Big Mamba...
 echo.
-pip install big-mamba-lang
+pip install big-mamba
 
 if %errorlevel% neq 0 (
     echo.
     echo   Error: Installation failed.
-    echo   Try running as Administrator or use: python -m pip install big-mamba-lang
+    echo   Try running as Administrator or use: python -m pip install big-mamba
     pause
     exit /b 1
 )

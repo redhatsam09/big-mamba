@@ -29,7 +29,7 @@ for i in range(10):                 @ i in rng(10):
 ### pip install (Recommended)
 
 ```bash
-pip install big-mamba-lang
+pip install big-mamba
 ```
 
 After installation, use the `mamba` command from anywhere:
@@ -271,9 +271,9 @@ mamba.py             CLI entry point
 
 | Platform | Install Command |
 |----------|----------------|
-| Windows  | `pip install big-mamba-lang` |
-| macOS    | `pip3 install big-mamba-lang` |
-| Linux    | `pip3 install big-mamba-lang` |
+| Windows  | `pip install big-mamba` |
+| macOS    | `pip3 install big-mamba` |
+| Linux    | `pip3 install big-mamba` |
 
 Works on any system with Python 3.9+. No external dependencies.
 

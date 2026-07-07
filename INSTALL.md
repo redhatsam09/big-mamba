@@ -9,7 +9,7 @@ Big Mamba requires Python 3.6 or higher. It works on Windows, macOS, and Linux.
 Works on all operating systems. One command.
 
 ```bash
-pip install big-mamba-lang
+pip install big-mamba
 ```
 
 After installation, the `mamba` command is available globally:
@@ -23,13 +23,13 @@ mamba run hello.mamba
 If `pip` does not work, try:
 
 ```bash
-python -m pip install big-mamba-lang
+python -m pip install big-mamba
 ```
 
 Or on Linux/macOS:
 
 ```bash
-pip3 install big-mamba-lang
+pip3 install big-mamba
 ```
 
 ---
@@ -184,7 +184,7 @@ mamba run examples/hello.mamba
 ## Uninstall
 
 ```bash
-pip uninstall big-mamba-lang
+pip uninstall big-mamba
 ```
 
 ---
@@ -209,20 +209,20 @@ source ~/.bashrc
 Use `--user` flag:
 
 ```bash
-pip install --user big-mamba-lang
+pip install --user big-mamba
 ```
 
 Or on Linux:
 
 ```bash
-sudo pip install big-mamba-lang
+sudo pip install big-mamba
 ```
 
 ### pip not found
 
 ```bash
 python -m ensurepip --upgrade
-python -m pip install big-mamba-lang
+python -m pip install big-mamba
 ```
 
 ---
@@ -231,16 +231,16 @@ python -m pip install big-mamba-lang
 
 | Platform | Status | Install Command |
 |----------|--------|----------------|
-| Windows 10/11 | Supported | `pip install big-mamba-lang` |
-| macOS 12+ | Supported | `pip3 install big-mamba-lang` |
-| Ubuntu 20.04+ | Supported | `pip3 install big-mamba-lang` |
-| Debian 11+ | Supported | `pip3 install big-mamba-lang` |
-| Fedora 36+ | Supported | `pip3 install big-mamba-lang` |
-| Arch Linux | Supported | `pip install big-mamba-lang` |
-| CentOS 8+ | Supported | `pip3 install big-mamba-lang` |
-| Alpine Linux | Supported | `pip3 install big-mamba-lang` |
-| WSL | Supported | `pip3 install big-mamba-lang` |
-| Termux (Android) | Supported | `pip install big-mamba-lang` |
-| Raspberry Pi | Supported | `pip3 install big-mamba-lang` |
+| Windows 10/11 | Supported | `pip install big-mamba` |
+| macOS 12+ | Supported | `pip3 install big-mamba` |
+| Ubuntu 20.04+ | Supported | `pip3 install big-mamba` |
+| Debian 11+ | Supported | `pip3 install big-mamba` |
+| Fedora 36+ | Supported | `pip3 install big-mamba` |
+| Arch Linux | Supported | `pip install big-mamba` |
+| CentOS 8+ | Supported | `pip3 install big-mamba` |
+| Alpine Linux | Supported | `pip3 install big-mamba` |
+| WSL | Supported | `pip3 install big-mamba` |
+| Termux (Android) | Supported | `pip install big-mamba` |
+| Raspberry Pi | Supported | `pip3 install big-mamba` |
 
 Any system with Python 3.6+ can run Big Mamba. No external dependencies required.
