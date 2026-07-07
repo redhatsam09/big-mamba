@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "big-mamba-lang"
+version = "1.0.0"
+description = "Big Mamba - The shorthand programming language. Python, but faster to type."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.6"
+keywords = ["programming-language", "transpiler", "shorthand", "mamba", "big-mamba"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+]
+
+[project.scripts]
+mamba = "mamba:main"
+bigmamba = "mamba:main"
+big-mamba = "mamba:main"
+
+[project.urls]
+Homepage = "https://github.com/redhatsam09/big-mamba"
+Issues = "https://github.com/redhatsam09/big-mamba/issues"
+Documentation = "https://github.com/redhatsam09/big-mamba#readme"
