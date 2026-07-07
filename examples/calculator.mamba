@@ -1,0 +1,66 @@
+fn add(a, b):
+    ret a + b
+
+fn subtract(a, b):
+    ret a - b
+
+fn multiply(a, b):
+    ret a * b
+
+fn divide(a, b):
+    ? b == 0:
+        throw ValueError("Cannot divide by zero!")
+    ret a / b
+
+fn power(a, b):
+    ret a ** b
+
+fn modulo(a, b):
+    ? b == 0:
+        throw ValueError("Cannot modulo by zero!")
+    ret a % b
+
+fn calculate(a, op, b):
+    ? op == "+":
+        ret add(a, b)
+    ?? op == "-":
+        ret subtract(a, b)
+    ?? op == "*":
+        ret multiply(a, b)
+    ?? op == "/":
+        ret divide(a, b)
+    ?? op == "**":
+        ret power(a, b)
+    ?? op == "%":
+        ret modulo(a, b)
+    !:
+        throw ValueError($"Unknown operator: {op}")
+
+say "=== Big Mamba Calculator ==="
+say ""
+
+operations = [
+    (10, "+", 5),
+    (10, "-", 3),
+    (7, "*", 6),
+    (100, "/", 7),
+    (2, "**", 10),
+    (17, "%", 5),
+]
+
+@ a, op, b in operations:
+    try:
+        result = calculate(a, op, b)
+        say $"  {a} {op} {b} = {result}"
+    catch ValueError as e:
+        say $"  Error: {e}"
+
+say ""
+say "=== Division by Zero Test ==="
+try:
+    result = divide(10, 0)
+catch ValueError as e:
+    say $"  Caught error: {e}"
+
+say ""
+say "Calculator demo complete."

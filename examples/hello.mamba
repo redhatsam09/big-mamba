@@ -1,0 +1,40 @@
+say "Hello, World!"
+say "Welcome to Big Mamba!"
+
+name = "Big Mamba"
+version = 1.0
+say $"Language: {name} v{version}"
+
+a = 10
+b = 20
+say $"{a} + {b} = {a + b}"
+
+say $"Before swap: a={a}, b={b}"
+a <> b
+say $"After swap:  a={a}, b={b}"
+
+counter = 0
+say $"Counter: {counter}"
+counter++
+say $"After ++: {counter}"
+counter++
+say $"After ++: {counter}"
+counter--
+say $"After --: {counter}"
+
+is_awesome = T
+is_boring = F
+nothing = N
+
+say $"Is awesome? {is_awesome}"
+say $"Is boring? {is_boring}"
+say $"Nothing: {nothing}"
+
+fruits = ["apple", "banana", "cherry"]
+say $"Fruits: {fruits}"
+fruits.add("date")
+say $"After add: {fruits}"
+say $"Length: {l(fruits)}"
+
+say ""
+say "That's Big Mamba -- Python, but faster to type."

@@ -1,0 +1,45 @@
+name: Test Big Mamba
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Big Mamba
+        run: pip install -e .
+
+      - name: Test hello.mamba
+        run: python mamba.py run examples/hello.mamba
+
+      - name: Test fibonacci.mamba
+        run: python mamba.py run examples/fibonacci.mamba
+
+      - name: Test calculator.mamba
+        run: python mamba.py run examples/calculator.mamba
+
+      - name: Test classes.mamba
+        run: python mamba.py run examples/classes.mamba
+
+      - name: Test mamba command
+        run: mamba version
+
+      - name: Test transpile
+        run: mamba transpile examples/hello.mamba

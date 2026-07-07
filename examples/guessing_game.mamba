@@ -1,0 +1,58 @@
+use random
+
+fn play_game():
+    secret = random.randint(1, 100)
+    attempts = 0
+    max_attempts = 7
+
+    say "I'm thinking of a number between 1 and 100."
+    say $"You have {max_attempts} attempts. Good luck!"
+    say ""
+
+    wl attempts < max_attempts:
+        attempts++
+        remaining = max_attempts - attempts
+
+        try:
+            guess = i(ask($"  Attempt {attempts}/{max_attempts} -- Your guess: "))
+        catch ValueError:
+            say "  Please enter a valid number!"
+            attempts--
+            cnt
+
+        ? guess == secret:
+            say ""
+            say $"  Correct! You got it in {attempts} attempts!"
+            ret T
+        ?? guess < secret:
+            say $"  Too low! ({remaining} attempts left)"
+        !:
+            say $"  Too high! ({remaining} attempts left)"
+
+    say ""
+    say $"  Out of attempts! The number was {secret}"
+    ret F
+
+say "=============================="
+say "  Big Mamba Guessing Game"
+say "=============================="
+say ""
+
+wins = 0
+games = 0
+
+wl T:
+    games++
+    ? play_game():
+        wins++
+
+    say ""
+    say $"  Score: {wins}/{games} wins"
+    say ""
+
+    again = ask("  Play again? (y/n): ")
+    ? again.lo().trim() != "y":
+        brk
+
+say ""
+say $"Thanks for playing! Final score: {wins}/{games}"

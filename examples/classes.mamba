@@ -1,0 +1,105 @@
+cls Animal:
+    fn init(me, name, sound):
+        me.name = name
+        me.sound = sound
+
+    fn speak(me):
+        say $"{me.name} says {me.sound}!"
+
+    fn info(me):
+        ret $"Animal(name={me.name}, sound={me.sound})"
+
+cls Dog(Animal):
+    fn init(me, name, breed):
+        Animal.init(me, name, "Woof")
+        me.breed = breed
+
+    fn fetch(me, item):
+        say $"{me.name} fetches the {item}!"
+
+    fn info(me):
+        ret $"Dog(name={me.name}, breed={me.breed})"
+
+cls Cat(Animal):
+    fn init(me, name, indoor):
+        Animal.init(me, name, "Meow")
+        me.indoor = indoor
+
+    fn purr(me):
+        say $"{me.name} purrs..."
+
+    fn info(me):
+        ret $"Cat(name={me.name}, indoor={me.indoor})"
+
+cls TodoList:
+    fn init(me, title):
+        me.title = title
+        me.tasks = []
+        me.completed = []
+
+    fn add_task(me, task):
+        me.tasks.add(task)
+        say $"  Added: {task}"
+
+    fn complete(me, task):
+        ? task in me.tasks:
+            me.tasks.rm(task)
+            me.completed.add(task)
+            say $"  Completed: {task}"
+        !:
+            say $"  Task not found: {task}"
+
+    fn show(me):
+        say $"\n  {me.title}"
+        say "  -- Pending --"
+        ? l(me.tasks) == 0:
+            say "    (none)"
+        !:
+            @ task in me.tasks:
+                say $"    [ ] {task}"
+
+        say "  -- Done --"
+        ? l(me.completed) == 0:
+            say "    (none)"
+        !:
+            @ task in me.completed:
+                say $"    [x] {task}"
+
+        total = l(me.tasks) + l(me.completed)
+        ? total > 0:
+            pct = rnd(l(me.completed) / total * 100)
+        !:
+            pct = 0
+        say $"  -- Progress: {pct}% --"
+
+say "=== Big Mamba OOP Demo ==="
+say ""
+
+say "-- Animals --"
+dog = Dog("Rex", "German Shepherd")
+cat = Cat("Whiskers", T)
+
+dog.speak()
+dog.fetch("ball")
+say dog.info()
+
+say ""
+cat.speak()
+cat.purr()
+say cat.info()
+
+say ""
+say "-- Todo List --"
+todo = TodoList("My Tasks")
+todo.add_task("Learn Big Mamba")
+todo.add_task("Write code")
+todo.add_task("Ship product")
+todo.add_task("Celebrate")
+
+todo.complete("Learn Big Mamba")
+todo.complete("Write code")
+
+todo.show()
+
+say ""
+say "OOP demo complete."
