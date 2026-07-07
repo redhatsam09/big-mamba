@@ -1,5 +1,9 @@
 # Big Mamba Programming Language
 
+[![Test Big Mamba](https://github.com/redhatsam09/big-mamba/actions/workflows/test.yml/badge.svg)](https://github.com/redhatsam09/big-mamba/actions/workflows/test.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/redhatsam09/big-mamba/blob/main/LICENSE)
+
 **Python, but faster to type.**
 
 Big Mamba shortens Python the same way Python shortened C++. It transpiles to Python under the hood.
@@ -8,7 +12,7 @@ The `.mamba` file extension is exclusive to Big Mamba. No other language uses it
 
 ```
 Python                              Big Mamba
-──────                              ─────────
+------                              ---------
 def fibonacci(n):                   fn fibonacci(n):
     if n <= 1:                          ? n <= 1:
         return n                            ret n
@@ -20,15 +24,53 @@ for i in range(10):                 @ i in rng(10):
 
 ---
 
+## Installation
+
+### pip install (Recommended)
+
+```bash
+pip install big-mamba-lang
+```
+
+After installation, use the `mamba` command from anywhere:
+
+```bash
+mamba run hello.mamba
+mamba repl
+mamba version
+```
+
+### Install from source
+
+```bash
+git clone https://github.com/redhatsam09/big-mamba.git
+cd big-mamba
+pip install .
+```
+
+### Run without installing
+
+```bash
+git clone https://github.com/redhatsam09/big-mamba.git
+cd big-mamba
+python mamba.py run examples/hello.mamba
+python mamba.py repl
+```
+
+No external dependencies. Pure Python 3.9+.
+
+---
+
 ## Quick Start
 
 ```bash
-python mamba.py run examples/hello.mamba
-python mamba.py repl
-python mamba.py transpile examples/hello.mamba
+mamba run examples/hello.mamba        # Run a program
+mamba repl                            # Interactive mode
+mamba transpile examples/hello.mamba  # See generated Python
+mamba tokens examples/hello.mamba     # See lexer tokens
+mamba help                            # All commands
+mamba version                         # Version info
 ```
-
-No dependencies required. Python 3.6+ only.
 
 ---
 
@@ -210,12 +252,6 @@ mamba.py             CLI entry point
 
 ---
 
-## File Extension
-
-Big Mamba files use the `.mamba` extension. This extension is unique to Big Mamba and is not used by any other programming language.
-
----
-
 ## Comparison
 
 | Feature       | C++                        | Python              | Big Mamba          |
@@ -228,6 +264,32 @@ Big Mamba files use the `.mamba` extension. This extension is unique to Big Mamb
 | Self ref      | this->x                    | self.x              | me.x               |
 | Import        | #include <x>               | import x            | use x              |
 | Boolean       | bool b = true;             | b = True            | b = T              |
+
+---
+
+## Platform Support
+
+| Platform | Install Command |
+|----------|----------------|
+| Windows  | `pip install big-mamba-lang` |
+| macOS    | `pip3 install big-mamba-lang` |
+| Linux    | `pip3 install big-mamba-lang` |
+
+Works on any system with Python 3.9+. No external dependencies.
+
+See [INSTALL.md](INSTALL.md) for detailed installation instructions for every OS.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
